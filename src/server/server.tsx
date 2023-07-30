@@ -11,7 +11,7 @@ app.use(compression())
 app.use('/public', express.static('dist/server/public'))
 
 app.get('/', (req, res) => {
-  res.send(renderSSR(<Home />))
+  res.send(renderSSR(() => <Home />))
 })
 
 app.listen(port, () => {
